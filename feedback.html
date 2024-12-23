@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            direction: rtl;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            font-size: 16px;
+            display: block;
+            margin-bottom: 5px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #ff9100;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #ff9100;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>إرسال ملاحظات</h1>
+        <form id="feedbackForm">
+            <div class="form-group">
+                <label for="title">العنوان</label>
+                <input type="text" id="title" name="title" required>
+            </div>
+            <div class="form-group">
+                <label for="user">مستخدم (ID)</label>
+                <input type="text" id="user" name="user" required>
+            </div>
+            <div class="form-group">
+                <label for="service">خدمة (ID)</label>
+                <input type="text" id="service" name="service" required>
+            </div>
+            <div class="form-group">
+                <label for="message">التعليق</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+            </div>
+            <button type="submit">إرسال الملاحظات</button>
+        </form>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const userID = urlParams.get('userID');
+const workerID = urlParams.get('workerID');
+const serviceID = urlParams.get('service');
+document.getElementById("user").value = userID;
+document.getElementById("service").value = workerID;
+console.log(serviceID)
+        document.getElementById('feedbackForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const feedbackData = {
+                title: document.getElementById('title').value,
+                user: document.getElementById('user').value,
+                service: document.getElementById('service').value,
+                message: document.getElementById('message').value
+            };
+
+            fetch(`https://fixly-umber.vercel.app//fixly/api/review/${serviceId}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(feedbackData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert('تم إرسال الملاحظات بنجاح!');
+                console.log(data);
+            })
+            .catch(error => {
+                alert('حدث خطأ أثناء إرسال الملاحظات.');
+                console.error(error);
+            });
+        });
+    </script>
+    
+</body>
+</html>
+
+<!-- 
+
+
+        -->

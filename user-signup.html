@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Signup - Fixly</title>
+    <link rel="stylesheet" href="css/signup.css">
+</head>
+<body class="user-b">
+
+<!-- Navbar -->
+<nav class="navbar">
+    <ul>
+        <li id="getStartedSection"><a href="#getStarted">Get Started</a></li>
+        <li id="accountButton" style="display: none;"><a href="/user-account.html">Account</a></li>
+    </ul>
+</nav>
+
+<!-- Signup Container -->
+<div class="shadow"></div>
+<div class="signup-container">
+    <h2>User Signup</h2>
+
+    <form id="userForm">
+        <input type="text" id="username" placeholder="Username" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <input type="tel" id="phone" placeholder="Phone Number" required>
+        <input type="text" id="location" placeholder="Location" required>
+
+        <!-- Hidden role field -->
+        <input type="hidden" id="role" value="user">
+
+        <button type="submit">Sign Up</button>
+    </form>
+</div>
+
+<script>
+    let isSubmitting = false;  // Prevent multiple submissions
+
+    document.getElementById('userForm').addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        if (isSubmitting) return;  // Prevent duplicate requests
+        isSubmitting = true;
+
+        const data = {
+            username: document.getElementById('username').value,
+            email: document.getElementById('email').value,
+            password: document.getElementById('password').value,
+            phone: document.getElementById('phone').value,
+            location: document.getElementById('location').value,
+            role: document.getElementById('role').value
+        };
+
+        try {
+            const response = await fetch('https://fixly-umber.vercel.app/fixly/api/auth/signup', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+
+            const result = await response.json();
+
+            console.log('API Response:', result);  // For debugging
+
+            if (response.ok) {
+                alert('Signup successful!');
+
+                // Store user data and token in localStorage
+                localStorage.setItem('userData', JSON.stringify(data));
+                localStorage.setItem('isLoggedIn', 'true');  // Set isLoggedIn to true
+
+                // Assuming the token is returned in result.token
+                if (result.token) {
+                    localStorage.setItem('token', result.token);  // Store the token
+                }
+
+                handleLoginState(data.username);
+                window.location.href = '/';  // Redirect after signup
+            } else {
+                alert(`Signup Error: ${result.message || 'An unexpected error occurred'}`);
+            }
+        } catch (error) {
+            console.error('Signup Error:', error);
+            alert('Signup failed. Please try again later.');
+        } finally {
+            isSubmitting = false;  // Allow future attempts
+        }
+    });
+
+    // Placeholder function to handle login state
+    function handleLoginState(username) {
+        console.log('User signed up:', username);
+    }
+</script>
+
+</body>
+</html>

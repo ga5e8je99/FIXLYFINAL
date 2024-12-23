@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <style>
+        /* General styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Payment container */
+        .payment-container {
+            width: 80%;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        /* Page title */
+        .payment-container h1 {
+            color: #333;
+        }
+
+        /* Payment methods */
+        .payment-methods {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .payment-option {
+            background-color: #f1f1f1;
+            padding: 20px;
+            border-radius: 8px;
+            width: 250px;
+            text-align: center;
+        }
+
+        .payment-option img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .payment-option h3 {
+            color: #333;
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .payment-option p {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .select-btn {
+            padding: 10px 20px;
+            background-color: #ff6002;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .select-btn:hover {
+            background-color: #e7681e;
+        }
+
+        /* Card details */
+        .card-details {
+            display: none;
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-details input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .submit-btn {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Payment confirmation */
+        .payment-confirmation {
+            display: none;
+            padding: 20px;
+            background-color: #d4edda;
+            border-radius: 8px;
+            color: #dc7031;
+        }
+
+        .payment-confirmation h3 {
+            font-size: 20px;
+        }
+
+        .payment-confirmation p {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+
+        .back-btn {
+            padding: 10px 20px;
+            background-color: #ff6002;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .back-btn:hover {
+            background-color: #ff6002;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Payment Page -->
+    <div class="payment-container">
+        <h1>Choose a Payment Method</h1>
+
+        <div class="payment-methods">
+            <!-- Cash on Delivery -->
+            <div class="payment-option" id="cashOption">
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="100" height="100" x="0" y="0" viewBox="0 0 484.184 484.184" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M309.43 219.944c-19-10.5-39.2-18.5-59.2-26.8-11.6-4.8-22.7-10.4-32.5-18.2-19.3-15.4-15.6-40.4 7-50.3 6.4-2.8 13.1-3.7 19.9-4.1 26.2-1.4 51.1 3.4 74.8 14.8 11.8 5.7 15.7 3.9 19.7-8.4 4.2-13 7.7-26.2 11.6-39.3 2.6-8.8-.6-14.6-8.9-18.3-15.2-6.7-30.8-11.5-47.2-14.1-21.4-3.3-21.4-3.4-21.5-24.9-.1-30.3-.1-30.3-30.5-30.3-4.4 0-8.8-.1-13.2 0-14.2.4-16.6 2.9-17 17.2-.2 6.4 0 12.8-.1 19.3-.1 19-.2 18.7-18.4 25.3-44 16-71.2 46-74.1 94-2.6 42.5 19.6 71.2 54.5 92.1 21.5 12.9 45.3 20.5 68.1 30.6 8.9 3.9 17.4 8.4 24.8 14.6 21.9 18.1 17.9 48.2-8.1 59.6-13.9 6.1-28.6 7.6-43.7 5.7-23.3-2.9-45.6-9-66.6-19.9-12.3-6.4-15.9-4.7-20.1 8.6-3.6 11.5-6.8 23.1-10 34.7-4.3 15.6-2.7 19.3 12.2 26.6 19 9.2 39.3 13.9 60 17.2 16.2 2.6 16.7 3.3 16.9 20.1.1 7.6.1 15.3.2 22.9.1 9.6 4.7 15.2 14.6 15.4 11.2.2 22.5.2 33.7-.1 9.2-.2 13.9-5.2 13.9-14.5 0-10.4.5-20.9.1-31.3-.5-10.6 4.1-16 14.3-18.8 23.5-6.4 43.5-19 58.9-37.8 42.8-52 26.5-128.1-34.1-161.6z" fill="#FF6E00" opacity="1" data-original="#000000" class=""></path></g></svg>
+                <h3>Cash on Delivery</h3>
+                <p>Select this option to pay when your order is delivered.</p>
+                <button class="select-btn" onclick="selectPaymentMethod('cash')">Choose Cash Payment</button>
+            </div>
+
+            <!-- Card Payment -->
+            <div class="payment-option" id="cardOption">
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="100" height="100" x="0" y="0" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M480 127.992H32c-17.632 0-32 14.368-32 32v288c0 17.664 14.368 32 32 32h448c17.664 0 32-14.336 32-32v-288c0-17.632-14.336-32-32-32z" style="" fill="#FF7A00" data-original="#2196f3" class="" opacity="1"></path><path d="M0 191.992h512v96H0z" style="" fill="#004363" data-original="#455a64" class="" opacity="1"></path><path d="M144 383.992H80c-8.832 0-16-7.168-16-16s7.168-16 16-16h64c8.832 0 16 7.168 16 16s-7.168 16-16 16zM512 286.264V159.992c0-17.632-14.336-32-32-32H224v32c0 100.224 38.144 161.248 136.192 217.696 7.232 4.128 15.488 6.304 23.808 6.304s16.576-2.176 23.904-6.368c48.512-27.872 82.304-56.96 104.096-91.36z" style="" fill="#FAFAFA" data-original="#fafafa" class=""></path><path d="m502.304 81.304-112-48a16.058 16.058 0 0 0-12.64 0l-112 48C259.808 83.8 256 89.592 256 95.992v64c0 88.032 32.544 139.488 120.032 189.888 2.464 1.408 5.216 2.112 7.968 2.112s5.504-.704 7.968-2.112C479.456 299.608 512 248.152 512 159.992v-64c0-6.4-3.808-12.192-9.696-14.688z" style="" fill="#004363" data-original="#009688" class="" opacity="1"></path><path d="M368 239.992h-.672a16.058 16.058 0 0 1-12.64-7.104l-32-48c-4.896-7.36-2.912-17.28 4.448-22.176 7.296-4.864 17.248-2.944 22.176 4.448l19.872 29.792 50.304-62.912c5.536-6.88 15.616-7.968 22.496-2.496 6.912 5.536 8 15.584 2.496 22.496l-64 80a16.131 16.131 0 0 1-12.48 5.952z"  fill="#FAFAFA" data-original="#fafafa" class=""></path></g></svg>
+                <h3>Card Payment</h3>
+                <p>Select this option to make a payment using a credit or debit card.</p>
+                <button class="select-btn" onclick="selectPaymentMethod('card')">Choose Card Payment</button>
+            </div>
+        </div>
+
+        <!-- Card Payment Form (Visible when selecting card payment) -->
+        <div class="card-details" id="cardDetails">
+            <h2>Enter Card Details</h2>
+            <form action="#" method="POST" id="cardForm" onsubmit="completePayment(event)">
+                <label for="cardNumber">Card Number:</label>
+                <input type="text" id="cardNumber" name="cardNumber" placeholder="XXXX-XXXX-XXXX-XXXX" required>
+
+                <label for="expiryDate">Expiry Date:</label>
+                <input type="month" id="expiryDate" name="expiryDate" required>
+
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" name="cvv" placeholder="XXX" required>
+
+                <button type="submit" class="submit-btn">Complete Payment</button>
+            </form>
+        </div>
+
+        <!-- Payment Confirmation Message (Visible after choosing cash payment or completing card payment) -->
+        <div class="payment-confirmation" id="confirmationMessage">
+            <h3>Payment Completed</h3>
+            <p>Your order has been successfully processed!</p>
+            <button class="back-btn" onclick="goBack()">Go Back to Home</button>
+        </div>
+    </div>
+
+    <script>
+        // Function to select payment method
+        function selectPaymentMethod(method) {
+            if (method === 'cash') {
+                // Show cash payment confirmation message
+                document.getElementById('confirmationMessage').style.display = 'block';
+                document.getElementById('cardDetails').style.display = 'none';
+                completePayment();
+            } else if (method === 'card') {
+                // Show card payment form
+                document.getElementById('cardDetails').style.display = 'block';
+                document.getElementById('confirmationMessage').style.display = 'none';
+            }
+        }
+
+        // Function to complete payment and remove cart from localStorage
+        function completePayment(event) {
+            if (event) event.preventDefault(); // Prevent form submission if card payment
+
+            // Remove cart from localStorage
+            localStorage.removeItem('cart');
+
+            // Show the confirmation message
+            document.getElementById('confirmationMessage').style.display = 'block';
+            document.getElementById('cardDetails').style.display = 'none';
+        }
+
+        // Function to go back to home page
+        function goBack() {
+            window.location.href = 'index.html'; // Change this to your home page URL
+        }
+
+        // Show/Hide card details form when choosing payment method
+        document.getElementById('cashOption').addEventListener('click', () => selectPaymentMethod('cash'));
+        document.getElementById('cardOption').addEventListener('click', () => selectPaymentMethod('card'));
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="Business, FFixly, Consulting" />
+  <meta name="description" content="Fixly offers premium financial and consulting services to help businesses thrive." />
+  <meta name="author" content="Fixly Team" />
+
+  <title>Fixly - About Us</title>
+
+  <!-- slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <!-- font awesome style -->
+  <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+<style>
+  /* General Reset */
+body, h1, h2, h3, h4, p, ul, li, a {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f8f9fa;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Header Section */
+.header_top {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0;
+}
+
+.contact_nav a {
+  color: #fff;
+  margin-right: 20px;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.contact_nav a i {
+  margin-right: 5px;
+}
+
+.header_bottom {
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+}
+
+.navbar {
+  padding: 15px 0;
+}
+
+.navbar-brand img {
+  width: 150px;
+}
+
+.navbar-nav .nav-item .nav-link {
+  color: #333;
+  font-weight: 600;
+  padding: 10px 15px;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+  color: #ff6002;
+}
+
+#loginNavItem .nav-link {
+  color: #ff6002;
+  font-weight: bold;
+}
+
+/* Hero Section */
+.hero_area {
+  background-color: #f8f9fa;
+}
+
+/* About Section */
+.about_section {
+  background-color: #ffffff;
+  padding: 60px 0;
+}
+
+.detail-box h2 {
+  font-size: 36px;
+  color: #ff6002;
+  margin-bottom: 20px;
+}
+
+.detail-box p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #555;
+}
+
+.img-box img {
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Info Section */
+.info_section {
+  background-color: #333;
+  color: #fff;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.info_section h4 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.info_items .item {
+  text-align: center;
+  padding: 20px;
+  background-color: #444;
+  margin: 10px;
+  border-radius: 8px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.info_items .item:hover {
+  transform: translateY(-5px);
+  background-color: #ff6002;
+}
+
+.info_items .item i {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.info_items .item p {
+  font-size: 16px;
+}
+
+/* Social Media Section */
+.social-box {
+  margin-top: 30px;
+}
+
+.social-box h4 {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.social-box .box a {
+  font-size: 18px;
+  color: #fff;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+
+.social-box .box a:hover {
+  color: #ff6002;
+}
+
+/* Footer */
+.footer {
+  background-color: #222;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 14px;
+}
+
+.footer p {
+  margin: 0;
+}
+
+/* Buttons */
+button, .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #ff6002;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover, .btn:hover {
+  background-color: #cc4e00;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .detail-box h2 {
+    font-size: 28px;
+  }
+
+  .navbar-nav .nav-item .nav-link {
+    font-size: 14px;
+  }
+
+  .info_items .item {
+    padding: 15px;
+  }
+}
+/* About Cards Section */
+.about_cards_section {
+  background-color: #f8f9fa;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.section_title {
+  font-size: 32px;
+  color: #333;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card-img img {
+  width: 100%;
+  height: 150px;
+  border-bottom: 3px solid #ff6002;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-body h4 {
+  font-size: 20px;
+  color: #ff6002;
+  margin-bottom: 15px;
+}
+
+.card-body p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.6;
+}
+
+</style>
+</head>
+
+<body>
+  <div class="hero_area">
+    <!-- header section starts -->
+    <header class="header_section">
+      <div class="header_top">
+        <div class="container-fluid">
+          <div class="contact_nav">
+            <a href="tel:+01111111111">
+              <i class="fa fa-phone" aria-hidden="true"></i>
+              <span>
+                Call: +01 111111111
+              </span>
+            </a>
+            <a href="mailto:fixly@gmail.com">
+              <i class="fa fa-envelope" aria-hidden="true"></i>
+              <span>
+                Email: fixly@gmail.com
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="header_bottom">
+        <div class="container-fluid">
+          <nav class="navbar navbar-expand-lg custom_nav-container ">
+            <a class="navbar-brand" href="index.html">
+              <span>
+                <img src='images/logo.png' alt="Fixly Logo" style='width:100px;'>
+              </span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class=""> </span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ">
+                <li class="nav-item ">
+                  <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="about.html">About Us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./service.html">Services</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./tool.html">Products</a>
+                </li>
+                <li class="nav-item" id='loginNavItem'>
+                  <a class="nav-link" href="login.html" style="color:#ff6002;">Login</a>
+                </li>
+                <li class="nav-item non-active" id="account">
+                  <a class="nav-link" href="./user-account.html">
+                    <i class="fa fa-user" style="color: #ff6002;"></i>
+                  </a>
+                </li>
+                <li class="nav-item non-active" id='logout'>
+                  <a class="nav-link">
+                    <i class="fa fa-sign-out" style="color: #ff6002;"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <!-- end header section -->
+  </div>
+
+  <!-- about section -->
+
+  <section class="about_section layout_padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-5 col-md-6">
+          <div class="detail-box">
+            <h2>
+              About Us
+            </h2>
+            <p>
+              Welcome to Fixly! We are dedicated to providing top-notch financial consulting and business solutions tailored to meet your needs. Our experienced team ensures excellence in every aspect of service delivery, helping you achieve your goals efficiently.
+            </p>
+            <p>
+              At Fixly, we believe in innovation, integrity, and long-term partnerships with our clients. Join us on a journey towards growth and success!
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-7 col-md-6">
+          <div class="img-box">
+            <img src="images/about-img.jpg" alt="About Fixly">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end about section -->
+  <section class="about_cards_section layout_padding">
+    <div class="container">
+      <h2 class="section_title">Why Choose Us</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-img">
+              <img src="https://www.interplaylearning.com/wp-content/uploads/2022/05/shutterstock_476298817-scaled.jpeg" alt="Expertise">
+            </div>
+            <div class="card-body">
+              <h4>Expertise</h4>
+              <p>Our team of experts delivers top-notch solutions tailored to your business needs.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-img">
+              <img src="https://eleks.com/wp-content/uploads/1-1.jpg" alt="24/7 Support">
+            </div>
+            <div class="card-body">
+              <h4>24/7 Support</h4>
+              <p>We provide around-the-clock assistance to ensure your operations run smoothly.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-img">
+              <img src="https://leaguepark.com/wp-content/uploads/2024/02/Maintenance-workers-min-1024x683.jpg" alt="Growth">
+            </div>
+            <div class="card-body">
+              <h4>Growth</h4>
+              <p>Our innovative strategies are designed to drive growth and maximize ROI for your business.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- info section -->
+  <section class="info_section ">
+    <div class="container">
+      <h4>
+        Get In Touch
+      </h4>
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <div class="info_items">
+            <div class="row">
+              <div class="col-md-4">
+                <a href="">
+                  <div class="item ">
+                    <div class="img-box ">
+                      <i class="fa fa-map-marker" aria-hidden="true"></i>
+                    </div>
+                    <p>
+                      123 Business Street, NY, Ismailia
+                    </p>
+                  </div>
+                </a>
+              </div>
+              <div class="col-md-4">
+                <a href="tel:+021234567890">
+                  <div class="item ">
+                    <div class="img-box ">
+                      <i class="fa fa-phone" aria-hidden="true"></i>
+                    </div>
+                    <p>
+                      +02 1234567890
+                    </p>
+                  </div>
+                </a>
+              </div>
+              <div class="col-md-4">
+                <a href="mailto:fixly@gmail.com">
+                  <div class="item ">
+                    <div class="img-box">
+                      <i class="fa fa-envelope" aria-hidden="true"></i>
+                    </div>
+                    <p>
+                      contact@Fixly.com
+                    </p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </section>
+
+  <!-- footer section -->
+  <footer class="footer">
+    <p>&copy; 2024 Fixly. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script src="js/custom.js"></script>
+  <script src="./js/checklogin.js"></script>
+</body>
+
+</html>
