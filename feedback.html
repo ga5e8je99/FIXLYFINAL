@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +7,6 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            direction: rtl;
             margin: 0;
             padding: 0;
         }
@@ -55,36 +54,39 @@
 <body>
 
     <div class="container">
-        <h1>إرسال ملاحظات</h1>
+        <h1>Submit Feedback</h1>
         <form id="feedbackForm">
             <div class="form-group">
-                <label for="title">العنوان</label>
+                <label for="title">User Name</label>
                 <input type="text" id="title" name="title" required>
             </div>
-            <div class="form-group">
-                <label for="user">مستخدم (ID)</label>
-                <input type="text" id="user" name="user" required>
+            <div class="form-group" >
+                
+                <input type="hidden" id="user" name="user" required>
             </div>
             <div class="form-group">
-                <label for="service">خدمة (ID)</label>
-                <input type="text" id="service" name="service" required>
+                
+                <input type="hidden" id="service" name="service" required>
             </div>
             <div class="form-group">
-                <label for="message">التعليق</label>
+                <label for="message">Message</label>
                 <textarea id="message" name="message" rows="4" required></textarea>
             </div>
-            <button type="submit">إرسال الملاحظات</button>
+            <button type="submit">Submit Feedback</button>
         </form>
     </div>
 
     <script>
         const urlParams = new URLSearchParams(window.location.search);
         const userID = urlParams.get('userID');
-const workerID = urlParams.get('workerID');
-const serviceID = urlParams.get('service');
-document.getElementById("user").value = userID;
-document.getElementById("service").value = workerID;
-console.log(serviceID)
+        const workerID = urlParams.get('workerID');
+        const serviceID = urlParams.get('service');
+
+        document.getElementById("user").value = userID;
+        document.getElementById("service").value = workerID;
+
+        console.log(serviceID);
+
         document.getElementById('feedbackForm').addEventListener('submit', function(event) {
             event.preventDefault();
 
@@ -95,7 +97,7 @@ console.log(serviceID)
                 message: document.getElementById('message').value
             };
 
-            fetch(`https://fixly-umber.vercel.app//fixly/api/review/${serviceId}`, {
+            fetch(`https://fixly-umber.vercel.app//fixly/api/review/${serviceID}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -104,11 +106,11 @@ console.log(serviceID)
             })
             .then(response => response.json())
             .then(data => {
-                alert('تم إرسال الملاحظات بنجاح!');
+                alert('Feedback submitted successfully!');
                 console.log(data);
             })
             .catch(error => {
-                alert('حدث خطأ أثناء إرسال الملاحظات.');
+                alert('There was an error submitting the feedback.');
                 console.error(error);
             });
         });
@@ -116,8 +118,3 @@ console.log(serviceID)
     
 </body>
 </html>
-
-<!-- 
-
-
-        -->
